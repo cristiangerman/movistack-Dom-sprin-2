@@ -32,19 +32,7 @@ $inputBusqueda.addEventListener("input", (evento) => {
 
 const generosPeliculas = document.getElementById('generos')
 
-// generosPeliculas.addEventListener('change', () => {
-//     const generosLista = generosPeliculas.value;
-//     const filtrar = [];
-//     for (let movie of Movies) {
-//         if (movie.genres.includes(generosLista)) {
-//             filtrar.push(movie);
-//             $peliculas.innerHTML = llenar(filtrar)
-//         } else if (generosLista == "All") {
-//             $peliculas.innerHTML = llenar(Movies);
-//         }
-//     }
-// }
-// )
+g
 
 generosPeliculas.addEventListener('change', () => {
     const generosLista = generosPeliculas.value;
