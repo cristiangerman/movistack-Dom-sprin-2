@@ -1,3 +1,4 @@
+//llamo el elemento pelicula
 const $peliculas = document.getElementById("peliculas")
 function cards(pelicula) {
     return `
@@ -20,7 +21,7 @@ const peliculas = document.getElementById('peliculas');
 peliculas.innerHTML = llenar(Movies);
 
 const $inputBusqueda = document.getElementById('inputBusqueda');
-
+//filtro de nombre
 function filterName(nombrePelicula, nombreMovies) {
     return nombrePelicula.filter(movie => movie.title.toLowerCase().includes(nombreMovies.toLowerCase()))
 }
@@ -31,8 +32,6 @@ $inputBusqueda.addEventListener("input", (evento) => {
 });
 
 const generosPeliculas = document.getElementById('generos')
-
-g
 
 generosPeliculas.addEventListener('change', () => {
     const generosLista = generosPeliculas.value;
@@ -49,15 +48,16 @@ generosPeliculas.addEventListener('change', () => {
 });
 
 
-let mostrarPeli = Movies;
+
+let mostrarPelis = Movies;
 
 function actualizarPeliculas() {
     const nombreABuscar = $inputBusqueda.value.toLowerCase();
-    const seleccionarGenero = generosPeliculas.value;
+    const generoSeleccionado = generosPeliculas.value;
 
-    let peliculasFiltradas = mostrarPeli.filter(movie => {
+    let peliculasFiltradas = mostrarPelis.filter(movie => {
         const cumpleNombre = movie.title.toLowerCase().includes(nombreABuscar);
-        const cumpleGenero = seleccionarGenero === 'All' || movie.genres.includes(generoSeleccionado);
+        const cumpleGenero = generoSeleccionado === 'All' || movie.genres.includes(generoSeleccionado);
         return cumpleNombre && cumpleGenero;
     });
 
@@ -68,4 +68,4 @@ $inputBusqueda.addEventListener("input", actualizarPeliculas);
 generosPeliculas.addEventListener('change', actualizarPeliculas);
 
 
-actualizarPeliculas();
+actualizarPeliculas(); 
